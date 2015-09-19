@@ -2,39 +2,44 @@
 // have the ability to add dishes to diner's meal
 function Diner(name) {
     // meal consists of a array of dishes
-    this.name = name,
-    this.meal = [],
-    this.tax = 0.1,
-    this.tip = 0.2,
-    // Not currently being used -- placeholder in case the tip should be calculated equally amongs diners
-    this.mealCost = 0,
-};
+  this.name = name;
+  this.meal = [];
+  this.tax = 0.1;
+  this.tip = 0.2;
+  // Not currently being used --
+  // placeholder in case the tip should be calculated equally amongs diners
+  this.mealCost = 0;
+}
 
 // Diner object with name and cost properties
 function Dish(name, cost) {
-    this.name = name,
-    this.itemCost = cost,
-};
+  this.name = name;
+  this.itemCost = cost;
+}
 
 // Total up the cost of all the diner's meals
 // for each Diner add the cost of their meal
-var bill = function(diners) {
-    var total = 0;
-    // For each diner in the array of diners, loop through the items in their meal and add to the total cost
-    diners.forEach(function (diner, index){
-        var cost = 0;
-        diner.meal.forEach(function (dish, index){
-            console.log(diner.name + ' has ordered ' + dish.name + ' which cost: $' + dish.itemCost.toFixed(2))
-            cost += dish.itemCost;
-        })
-        // Add tax and tip to the cost for the diner
-        cost = (cost * diner.tax) + (cost * diner.tip) + cost;
-        console.log(diner.name + '\'s total with tax and tip is: $' + cost.toFixed(2));
-        // Add the diner's cost to the table's total
-        total += cost;
+var bill = function (diners) {
+  var total = 0;
+  // For each diner in the array of diners,
+  // loop through the items in their meal and add to the total cost
+  diners.forEach(function (diner, index) {
+    var cost = 0;
+    diner.meal.forEach(function (dish, index) {
+      console.log(diner.name + ' has ordered '
+                  + dish.name + ' which cost: $'
+                  + dish.itemCost.toFixed(2));
+      cost += dish.itemCost;
     });
-    console.log('The total for the table is: $' + total.toFixed(2));
-}
+    // Add tax and tip to the cost for the diner
+    cost = (cost * diner.tax) + (cost * diner.tip) + cost;
+    console.log(diner.name + '\'s total with tax and tip is: $'
+                + cost.toFixed(2));
+    // Add the diner's cost to the table's total
+    total += cost;
+  });
+  console.log('The total for the table is: $' + total.toFixed(2));
+};
 
 // A few dishes
 var poutine = new Dish('poutine', 10);
