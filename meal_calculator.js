@@ -5,15 +5,15 @@ function Diner(name) {
     this.name = name,
     this.meal = [],
     this.tax = 0.1,
-    this.tip = 0.2;
+    this.tip = 0.2,
     // Not currently being used -- placeholder in case the tip should be calculated equally amongs diners
-    this.mealCost = 0;
+    this.mealCost = 0,
 };
 
 // Diner object with name and cost properties
 function Dish(name, cost) {
     this.name = name,
-    this.itemCost = cost;
+    this.itemCost = cost,
 };
 
 // Total up the cost of all the diner's meals
