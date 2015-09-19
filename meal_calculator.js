@@ -12,7 +12,7 @@ function Diner(name) {
 
 // Diner object with name and cost properties
 function Dish(name, cost) {
-    this.name = name;
+    this.name = name,
     this.itemCost = cost;
 };
 
@@ -24,28 +24,28 @@ var bill = function(diners) {
     diners.forEach(function (diner, index){
         var cost = 0;
         diner.meal.forEach(function (dish, index){
-            console.log(diner.name + " has ordered " + dish.name + " which cost: $" + dish.itemCost.toFixed(2))
+            console.log(diner.name + ' has ordered ' + dish.name + ' which cost: $' + dish.itemCost.toFixed(2))
             cost += dish.itemCost;
         })
         // Add tax and tip to the cost for the diner
         cost = (cost * diner.tax) + (cost * diner.tip) + cost;
-        console.log(diner.name + "'s total with tax and tip is: $" + cost.toFixed(2));
+        console.log(diner.name + '\'s total with tax and tip is: $' + cost.toFixed(2));
         // Add the diner's cost to the table's total
         total += cost;
     });
-    console.log("The total for the table is: $" + total.toFixed(2));
+    console.log('The total for the table is: $' + total.toFixed(2));
 }
 
 // A few dishes
-var poutine = new Dish("poutine", 10);
-var breadSticks = new Dish("bread sticks", 3);
-var steakFrites = new Dish("steak frites", 15);
-var hamburger = new Dish("hamburger", 8);
-var meatballs = new Dish("meatballs", 11);
-var brusselSprouts = new Dish("brussel sprouts", 7);
-var sideSalad = new Dish("side salad", 5);
-var soda = new Dish("soda", 2);
-var iceCream = new Dish("ice cream", 4.5);
+var poutine = new Dish('poutine', 10);
+var breadSticks = new Dish('bread sticks', 3);
+var steakFrites = new Dish('steak frites', 15);
+var hamburger = new Dish('hamburger', 8);
+var meatballs = new Dish('meatballs', 11);
+var brusselSprouts = new Dish('brussel sprouts', 7);
+var sideSalad = new Dish('side salad', 5);
+var soda = new Dish('soda', 2);
+var iceCream = new Dish('ice cream', 4.5);
 
 // A few diners
 var diana = new Diner('Mike');
